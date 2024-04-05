@@ -66,7 +66,7 @@ public:
     std::optional<std::vector<std::string>> get_next_line() {
         std::string line;
 
-        if(file >> line)
+        if(std::getline(file, line))
             return this->parse(line);
     }
 
@@ -74,7 +74,7 @@ public:
         std::vector<std::vector<std::string>> result;
         std::string line;
 
-        while(file >> line)
+        while(std::getline(file, line))
             result.push_back(this->parse(line));
 
         return result;
