@@ -57,7 +57,7 @@ public:
     }
 
 protected:
-    virtual void open_file(const char* filename);
+    virtual void open_file(const char* filename) {}
 
     std::fstream file;
     std::string delimiter;
