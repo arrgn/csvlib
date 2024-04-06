@@ -93,7 +93,7 @@ public:
             return this->parse(line);
     }
 
-    std::vector<std::vector<std::string>>& read_all_lines() {
+    std::vector<std::vector<std::string>> read_all_lines() {
         std::vector<std::vector<std::string>> result;
         std::string line;
 
@@ -108,7 +108,7 @@ protected:
         file.open(filename, std::ios_base::in);
     }
 
-    std::vector<std::string>& parse(std::string line) {
+    std::vector<std::string> parse(std::string line) {
         std::vector<std::string> result;
         result.reserve(fieldnames.size());
 
@@ -148,7 +148,7 @@ protected:
         file.open(filename, std::ios_base::out);
     }
 
-    std::string& concatenate(const std::vector<std::string>& fields) {
+    std::string concatenate(const std::vector<std::string>& fields) {
         return combine(fields, this->delimiter);
     }
 };
@@ -213,7 +213,7 @@ protected:
         file.open(filename, std::ios_base::in);
     }
 
-    std::map<std::string, std::string>& parse(std::string line) {
+    std::map<std::string, std::string> parse(std::string line) {
         std::map<std::string, std::string> result;
         
         line += delimiter; // add delimiter to end of line otherwise we'll have a parse error parsing the last key-value pair
