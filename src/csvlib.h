@@ -88,14 +88,14 @@ public:
      * 
      * @return one row as optional variable (vector of strings if successful)
      */
-    std::optional<std::vector<std::string>> get_next_line();
+    std::optional<std::vector<std::string>> read_next_line();
 
     /**
      * @brief Get the all lines from csv file
      * 
      * @return all data as vector of vectors of strings (empty vector if no data)
      */
-    std::vector<std::vector<std::string>>& get_all_lines();
+    std::vector<std::vector<std::string>>& read_all_lines();
 
 protected:
     /**
@@ -174,7 +174,7 @@ protected:
      * @param fields data to concantinate
      * @return concantinated with delimiter string
      */
-    std::string& concantinate(const std::vector<std::string>& fields);
+    std::string& concatenate(const std::vector<std::string>& fields);
 };
 
 class CSVReaderWriter : CSVReader, CSVWriter, virtual CSV {
