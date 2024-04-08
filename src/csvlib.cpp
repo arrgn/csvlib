@@ -23,9 +23,15 @@ void split(std::string str, const std::string& delimiter, std::vector<std::strin
 }
 
 std::string combine(const std::vector<std::string>& fields, const std::string& delimiter) {
-    std::ostringstream ss;
-    std::copy(fields.begin(), fields.end(), std::ostream_iterator<std::string>(ss, delimiter.c_str()));
-    return ss.str();
+    if (fields.empty())
+        return "";
+
+    std::string res = "";
+    for (size_t i = 0; i < fields.size() - 1; i++)
+        res += fields[i] + delimiter;
+    res += fields[fields.size() - 1];
+
+    return res;
 }
 
 class CSV {
