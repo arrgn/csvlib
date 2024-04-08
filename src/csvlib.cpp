@@ -159,7 +159,7 @@ protected:
     }
 };
 
-class CSVReaderWriter : CSVReader, CSVWriter, virtual CSV {
+class CSVReaderWriter : public CSVReader, public CSVWriter, virtual CSV {
 public:
     CSVReaderWriter(const char* filename, const std::vector<std::string>& fieldnames = {}, const std::string& delimiter = ",") : CSV(filename, fieldnames, delimiter) {
         open_file(filename);
@@ -277,7 +277,7 @@ protected:
     }
 };
 
-class CSVDictReaderWriter : CSVDictReader, CSVDictWriter, virtual CSV {
+class CSVDictReaderWriter : public CSVDictReader, public CSVDictWriter, virtual CSV {
 public:
     CSVDictReaderWriter(const char* filename, const std::vector<std::string>& fieldnames = {}, const std::string& delimiter = ",") : CSV(filename, fieldnames, delimiter) {
         open_file(filename);
