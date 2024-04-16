@@ -1,3 +1,6 @@
+# WARNING!
+The project is fully broken and doesn't work. It will be a time when I will fix it.
+
 # csvlib
 Study csv lib project with doxygen documentation
 
